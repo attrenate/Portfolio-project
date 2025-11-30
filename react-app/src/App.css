@@ -1,1 +1,39 @@
-/* empty for now */
+/* src/App.css */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #111;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Canvas responsiveness */
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  canvas {
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  canvas {
+    height: 95vh !important;
+  }
+}
