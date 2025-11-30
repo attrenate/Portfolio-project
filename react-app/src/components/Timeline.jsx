@@ -26,14 +26,25 @@ const milestones = [
 export default function Timeline() {
   return (
     <Canvas style={{ height: '500px', background: '#111' }}>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.3} />
+<directionalLight position={[5, 5, 5]} intensity={1.2} />
+<pointLight position={[-5, -5, 5]} intensity={0.5} color="#ff00ff" />
+
       <pointLight position={[10, 10, 10]} />
-      <OrbitControls enableZoom={false}/>
+      <OrbitControls
+  enableZoom={false}
+  enablePan={false}
+  rotateSpeed={0.5}
+  minPolarAngle={Math.PI / 2.2}
+  maxPolarAngle={Math.PI / 2.2}
+/>
+
       
       {/* Timeline backbone */}
       <mesh position={[0, 0, 0]}>
         <boxGeometry args={[milestones.length * 2, 0.05, 0.05]} />
-        <meshStandardMaterial color="white" />
+        <meshStandardMaterial emissive="#00ffff" emissiveIntensity={0.6} />
+
       </mesh>
 
       {/* Render milestones */}
