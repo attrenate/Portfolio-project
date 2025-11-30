@@ -4,8 +4,25 @@ import { OrbitControls, Html } from '@react-three/drei';
 import { useRef, useState } from 'react';
 import Milestone from './Milestone';
 import milestones from '../data/milestones';
+import { useThree } from '@react-three/fiber';
+
 
 export default function Timeline() {
+ /*
+  function ResponsiveGroup({ children, count }) {
+  const { viewport } = useThree();
+
+  const spacing = Math.min(2, viewport.width / count * 1.5);
+  const width = count * spacing;
+
+  return (
+    <group scale={[viewport.width / width, 1, 1]}>
+      {children}
+    </group>
+  );
+}
+  */
+
   return (
     <Canvas style={{ height: '500px', background: '#111' }}>
       <ambientLight intensity={0.3} />
@@ -24,7 +41,7 @@ export default function Timeline() {
       
       {/* Timeline backbone */}
       <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[milestones.length * 2, 0.05, 0.05]} />
+        <boxGeometry args={[milestones.length * 10, 0.05, 0.05]} />
         <meshStandardMaterial emissive="#00ffff" emissiveIntensity={0.6} />
 
       </mesh>
