@@ -1,9 +1,10 @@
 // src/App.js
 import Timeline from './components/Timeline';
+import './App.css';
 
 function App() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <div className="app">
       <Timeline />
     </div>
   );
